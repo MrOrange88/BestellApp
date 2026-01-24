@@ -4,6 +4,86 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BestellApp</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles/assets.css" />
+    <link rel="stylesheet" href="styles/basket.css" />
+    <link rel="stylesheet" href="styles/fonts.css" />
+    <link rel="stylesheet" href="styles/standard.css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
   </head>
-  <body></body>
+  <body onload="init()">
+    <header>
+      <div class="header-container">
+        <img class="app-logo" src="./assets/img/Logo 01.png" alt="" srcset="" />
+        <button>
+          <img src="./assets/img/menu.png" alt="" />
+        </button>
+      </div>
+    </header>
+    <main>
+      <div class="main-container">
+        <section class="order-content">
+          <div class="restaurant-container">
+            <img
+              class="just-steaks-background"
+              src="./assets/img/justSteaksBackground3.png"
+              alt="Just Steaks Bild"
+              srcset=""
+            />
+            <div class="just-steaks-logo-container">
+              <img
+                class="just-steaks-logo"
+                src="./assets/img/justSteaksLogo.png"
+                alt="Just Steaks Logo"
+                srcset=""
+              />
+            </div>
+          </div>
+          <div>
+            <h1>Willkommen bei Just Steaks</h1>
+            <p>
+              Bestellen Sie Ihre Lieblings ganz einfach online und lassen Sie
+              sich kulinarisch verwöhnen!
+            </p>
+          </div>
+
+          <nav>
+            <button><a href="#">Steaks</a></button>
+            <button><a href="#">Beilagen</a></button>
+            <button><a href="#">Getränke</a></button>
+          </nav>
+          <div class="dishes-container">
+            <img src="" alt="steaks img" srcset="" />
+            <div class="template-container">
+              <h3>Steaks</h3>
+            </div>
+            <img src="" alt="Beilagen Sektion Bild" srcset="" />
+            <div class="template-container">
+              <h3>Beilagen</h3>
+            </div>
+            <img src="" alt="Getränke Sektion Bild" srcset="" />
+            <div class="template-container">
+              <h3>Getränke</h3>
+            </div>
+          </div>
+        </section>
+        <section class="basket-content">
+          <div class="basket">
+            <h2>Warenkorb</h2>
+            <div class="basket-items">
+              <p>Ihr Warenkorb ist leer.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer>
+      <div class="footer-container">
+        <p>&copy; 2025 BestellApp. Alle Rechte vorbehalten.</p>
+      </div>
+    </footer>
+  </body>
+  <script src="scripts/db.js"></script>
+  <script src="scripts/template.js"></script>
+  <script src="script.js"></script>
 </html>
