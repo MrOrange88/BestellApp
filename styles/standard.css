@@ -46,7 +46,11 @@ main {
 .main-basket-size {
   min-height: 90vh;
 }
+nav {
+  width: 300px;
 
+  padding: 16px;
+}
 footer {
   height: 10vh;
   background-color: var(--primary-color1);
@@ -90,5 +94,6 @@ button {
 }
 
 p {
+  font-weight: bold;
   font-size: medium;
 }
