@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -54,9 +54,9 @@
           </div>
 
           <nav>
-            <button><a href="#">Steaks</a></button>
-            <button><a href="#">Beilagen</a></button>
-            <button><a href="#">Getränke</a></button>
+            <button><a href="#steaks">Steaks</a></button>
+            <button><a href="#sides">Beilagen</a></button>
+            <button><a href="#drinks">Getränke</a></button>
           </nav>
           <div class="dishes-container">
             <img
@@ -89,11 +89,13 @@
           </div>
         </section>
         <section class="basket-content">
-          <div class="basket">
-            <h2>Warenkorb</h2>
-            <div class="basket-items">
-              <p>Ihr Warenkorb ist leer.</p>
-            </div>
+          <div class="basket-items" id="basket-items"></div>
+
+          <div class="basket-total">
+            <p>
+              Gesamt:
+              <span id="total-price">0.00 €</span>
+            </p>
           </div>
         </section>
       </div>
