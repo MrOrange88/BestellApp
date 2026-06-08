@@ -90,5 +90,14 @@ function renderBasket() {
   orderButton.disabled = cart.length === 0;
 }
 function toggleBasket() {
-  document.getElementById("basket-content").classList.toggle("basket-open");
+  const basket = document.getElementById("basket-content");
+  const button = document.getElementById("basket-toggle-button");
+
+  basket.classList.toggle("basket-open");
+
+  if (basket.classList.contains("basket-open")) {
+    button.innerHTML = "Warenkorb schließen";
+  } else {
+    button.innerHTML = "Warenkorb öffnen";
+  }
 }

@@ -42,6 +42,9 @@ main {
   display: flex;
   justify-content: center;
 }
+.main-container {
+  width: 100%;
+}
 
 .main-basket-size {
   min-height: 90vh;

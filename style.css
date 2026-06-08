@@ -65,9 +65,7 @@
 .add-to-cart:hover {
   background-color: #f4933d;
 }
-/* =========================
-   TABLET
-========================= */
+
 @media (max-width: 900px) {
   .main-container {
     flex-direction: column;
@@ -113,9 +111,6 @@
   }
 }
 
-/* =========================
-   SMARTPHONE
-========================= */
 @media (max-width: 600px) {
   .order-content {
     width: 100%;
@@ -170,9 +165,6 @@
   }
 }
 
-/* =========================
-   SEHR KLEINE GERÄTE
-========================= */
 @media (max-width: 320px) {
   .app-logo {
     width: 80px;
