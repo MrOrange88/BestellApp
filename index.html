@@ -91,18 +91,31 @@
             </div>
           </div>
         </section>
-        <section class="basket-content">
-          <div class="basket-items" id="basket-items"></div>
+        <section class="basket-content" id="basket-content">
+          <div class="basket">
+            <button class="close-basket-button" onclick="toggleBasket()">
+              ×
+            </button>
 
-          <div class="basket-total">
-            <p>Lieferkosten: <span id="delivery-price">5.00 €</span></p>
-            <p>Gesamt: <span id="total-price">0.00 €</span></p>
+            <h2>Warenkorb</h2>
+
+            <div id="basket-items"></div>
+
+            <div class="basket-summary">
+              <p>Zwischensumme: <span id="subtotal-price">0.00 €</span></p>
+              <p>Lieferkosten: <span id="delivery-price">5.00 €</span></p>
+              <p>Gesamt: <span id="total-price">0.00 €</span></p>
+            </div>
 
             <button id="order-button" onclick="orderBasket()">
-              Bestellung abschicken
+              Bestellung aufgeben
             </button>
           </div>
         </section>
+
+        <button class="open-basket-button" onclick="toggleBasket()">
+          Warenkorb öffnen
+        </button>
       </div>
     </main>
     <footer>

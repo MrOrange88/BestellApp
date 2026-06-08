@@ -66,18 +66,29 @@ function orderBasket() {
 
 function renderBasket() {
   const basketItems = document.getElementById("basket-items");
+  const subtotalPrice = document.getElementById("subtotal-price");
   const totalPrice = document.getElementById("total-price");
   const orderButton = document.getElementById("order-button");
 
   basketItems.innerHTML = getBasketTemplate();
 
-  let total = 0;
+  let subtotal = 0;
 
   for (let i = 0; i < cart.length; i++) {
-    total += cart[i].price * cart[i].quantity;
+    subtotal += cart[i].price * cart[i].quantity;
   }
 
+  let total = subtotal;
+
+  if (cart.length > 0) {
+    total += deliveryCosts;
+  }
+
+  subtotalPrice.innerHTML = subtotal.toFixed(2) + " €";
   totalPrice.innerHTML = total.toFixed(2) + " €";
 
   orderButton.disabled = cart.length === 0;
+}
+function toggleBasket() {
+  document.getElementById("basket-content").classList.toggle("basket-open");
 }

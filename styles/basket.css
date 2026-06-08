@@ -31,3 +31,59 @@
   text-align: right;
   padding: 8px;
 }
+.open-basket-button {
+  display: none;
+}
+
+.close-basket-button {
+  display: none;
+}
+@media (max-width: 900px) {
+  .basket-content {
+    display: none;
+    width: 0;
+    padding: 0;
+    flex-grow: 0;
+  }
+
+  .basket-content.basket-open {
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+
+  .basket {
+    box-sizing: border-box;
+    width: 90vw;
+    max-width: 360px;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    overflow-y: auto;
+    padding: 16px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .open-basket-button {
+    display: block;
+    position: fixed;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    z-index: 999;
+    padding: 16px;
+  }
+
+  .close-basket-button {
+    display: block;
+    margin-left: auto;
+    font-size: 24px;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+}

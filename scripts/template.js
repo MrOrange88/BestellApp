@@ -33,13 +33,15 @@ function getBasketTemplate() {
         <span>${cart[i].name}</span>
 
         <div>
+        <div>
           <button onclick="removeFromBasket(${i})">-</button>
           <span>${cart[i].quantity}</span>
           <button onclick="increaseQuantity(${i})">+</button>
-
+        </div>
           <span>
             ${(cart[i].price * cart[i].quantity).toFixed(2)} €
           </span>
+        
         </div>
       </div>
     `;

@@ -65,3 +65,143 @@
 .add-to-cart:hover {
   background-color: #f4933d;
 }
+/* =========================
+   TABLET
+========================= */
+@media (max-width: 900px) {
+  .main-container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .order-content {
+    width: 100%;
+  }
+
+  nav {
+    width: auto;
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding: 12px;
+  }
+
+  nav button {
+    min-width: 110px;
+  }
+
+  .app-logo {
+    width: 120px;
+    margin-left: 16px;
+  }
+
+  .menu-img {
+    margin-right: 16px;
+  }
+
+  .just-steaks-background {
+    height: 280px;
+  }
+
+  .just-steaks-logo {
+    width: 90px;
+    margin-top: 235px;
+  }
+
+  .section-images {
+    height: 180px;
+  }
+}
+
+/* =========================
+   SMARTPHONE
+========================= */
+@media (max-width: 600px) {
+  .order-content {
+    width: 100%;
+  }
+
+  .app-logo {
+    width: 100px;
+    margin-left: 8px;
+  }
+
+  .menu-img {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+  }
+
+  .just-steaks-background {
+    height: 200px;
+  }
+
+  .just-steaks-logo {
+    width: 70px;
+    margin-top: 165px;
+  }
+
+  .section-images {
+    height: 120px;
+  }
+
+  .just-steaks-info {
+    padding: 12px;
+  }
+
+  .just-steaks-info h1 {
+    font-size: 22px;
+  }
+
+  .just-steaks-info p {
+    font-size: 14px;
+  }
+
+  .menu-item {
+    padding: 12px;
+  }
+
+  .menu-item h3 {
+    font-size: 18px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+}
+
+/* =========================
+   SEHR KLEINE GERÄTE
+========================= */
+@media (max-width: 320px) {
+  .app-logo {
+    width: 80px;
+  }
+
+  .just-steaks-info h1 {
+    font-size: 18px;
+  }
+
+  .just-steaks-info p {
+    font-size: 12px;
+  }
+
+  .menu-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu-item-header {
+    max-width: 100%;
+  }
+
+  .add-to-cart {
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  nav button {
+    min-width: 90px;
+    font-size: 12px;
+  }
+}
