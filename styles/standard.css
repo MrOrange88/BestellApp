@@ -46,6 +46,7 @@ main {
 .main-basket-size {
   min-height: 90vh;
 }
+
 nav {
   width: 300px;
 
@@ -92,7 +93,10 @@ button {
   border-radius: 4px;
   cursor: pointer;
 }
-
+button:hover {
+  background-color: var(--primary-color1);
+  color: white;
+}
 p {
   font-weight: bold;
   font-size: medium;

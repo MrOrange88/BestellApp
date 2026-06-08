@@ -41,6 +41,9 @@
           </div>
           <div class="just-steaks-info">
             <h1>Willkommen bei Just Steaks</h1>
+            <div class="rating-badge">
+              <p>⭐⭐⭐⭐⭐ 4.8/5 (327 Bewertungen)</p>
+            </div>
             <p>
               Just Steaks – echtes Feuer. ehrlicher Geschmack. Bei Just Steaks
               dreht sich alles um eines: perfekt gegrilltes Fleisch. <br />
@@ -66,7 +69,7 @@
               srcset=""
             />
             <div class="template-container" id="steaks">
-              <h3>Steaks</h3>
+              <div class="header-section-dishes"><h3>Steaks</h3></div>
             </div>
             <img
               class="section-images"
@@ -75,7 +78,7 @@
               srcset=""
             />
             <div class="template-container" id="sides">
-              <h3>Beilagen</h3>
+              <div class="header-section-dishes"><h3>Beilagen</h3></div>
             </div>
             <img
               class="section-images"
@@ -84,7 +87,7 @@
               srcset=""
             />
             <div class="template-container" id="drinks">
-              <h3>Getränke</h3>
+              <div class="header-section-dishes"><h3>Getränke</h3></div>
             </div>
           </div>
         </section>
@@ -92,10 +95,12 @@
           <div class="basket-items" id="basket-items"></div>
 
           <div class="basket-total">
-            <p>
-              Gesamt:
-              <span id="total-price">0.00 €</span>
-            </p>
+            <p>Lieferkosten: <span id="delivery-price">5.00 €</span></p>
+            <p>Gesamt: <span id="total-price">0.00 €</span></p>
+
+            <button id="order-button" onclick="orderBasket()">
+              Bestellung abschicken
+            </button>
           </div>
         </section>
       </div>

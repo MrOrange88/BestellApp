@@ -17,3 +17,17 @@
   top: 10vh;
   text-align: center;
 }
+.basket-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 4px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #eee;
+}
+.basket-total {
+  font-weight: bold;
+  color: #b87333;
+  text-align: right;
+  padding: 8px;
+}

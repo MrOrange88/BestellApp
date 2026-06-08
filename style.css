@@ -26,7 +26,11 @@
   padding: 16px;
   border-bottom: 1px solid #eee;
 }
-
+.header-section-dishes {
+  background-color: var(--primary-color1);
+  padding: 8px 16px;
+  margin-bottom: 16px;
+}
 .menu-item-content {
   max-width: 70%;
 }

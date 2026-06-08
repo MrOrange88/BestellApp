@@ -23,16 +23,18 @@ function renderMenu(items, containerId) {
 function getBasketTemplate() {
   let html = "";
 
+  if (cart.length === 0) {
+    return "<p>Dein Warenkorb ist leer.</p>";
+  }
+
   for (let i = 0; i < cart.length; i++) {
     html += `
       <div class="basket-item">
         <span>${cart[i].name}</span>
 
         <div>
-          <button onclick="decreaseQuantity(${i})">-</button>
-
+          <button onclick="removeFromBasket(${i})">-</button>
           <span>${cart[i].quantity}</span>
-
           <button onclick="increaseQuantity(${i})">+</button>
 
           <span>
