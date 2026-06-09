@@ -44,19 +44,21 @@
             </div>
           </div>
           <div class="just-steaks-info">
-            <h1>Willkommen bei Just Steaks</h1>
+            <h1>Just Steaks</h1>
             <div class="rating-badge">
-              <p>⭐⭐⭐⭐⭐ 4.8/5 (327 Bewertungen)</p>
+              <p>⭐⭐⭐⭐⭐ 4.8/5 (327 Reviews)</p>
             </div>
+          </div>
+          <div class="restaurant-description">
             <p>
-              Just Steaks – echtes Feuer. ehrlicher Geschmack. Bei Just Steaks
-              dreht sich alles um eines: perfekt gegrilltes Fleisch. <br />
-              Saftige Steaks, offenes Feuer und kompromisslose Qualität. Wir
-              grillen auf großer Flamme, lassen dem Fleisch Zeit und holen das
-              Beste aus jedem Cut heraus. <br />
-              Ob Ribeye, Rumpsteak oder zarte Spieße – bei uns trifft ehrliches
-              Handwerk auf puren Geschmack. Kein Schnickschnack, keine Umwege.
-              Just Steaks.
+              Just Steaks – Real Fire. Honest Flavor. At Just Steaks, everything
+              revolves around one thing: perfectly grilled meat. Juicy steaks,
+              open flames, and uncompromising quality. <br />
+              We grill over high heat, give the meat the time it deserves, and
+              bring out the very best in every <br />
+              Whether it's a ribeye, sirloin steak, or tender skewers, we
+              combine authentic craftsmanship with pure flavor.<br />
+              No gimmicks. No shortcuts. Just Steaks.
             </p>
           </div>
 
@@ -101,19 +103,26 @@
               ×
             </button>
 
-            <h2>Warenkorb</h2>
+            <h2>Your Basket</h2>
 
-            <div id="basket-items"></div>
+            <div class="basket-items" id="basket-items"></div>
 
             <div class="basket-summary">
-              <p>Zwischensumme: <span id="subtotal-price">0.00 €</span></p>
-              <p>Lieferkosten: <span id="delivery-price">5.00 €</span></p>
-              <p>Gesamt: <span id="total-price">0.00 €</span></p>
+              <p>subtotal: <span id="subtotal-price">0.00 €</span></p>
+              <p>delivery costs: <span id="delivery-price">5.00 €</span></p>
+              <div class="total-price-conatiner">
+                <p>total: <span id="total-price">0.00 €</span></p>
+              </div>
             </div>
-
-            <button id="order-button" onclick="orderBasket()">
-              Bestellung aufgeben
-            </button>
+            <div class="order-button-container">
+              <button
+                class="order-btn"
+                id="order-button"
+                onclick="orderBasket()"
+              >
+                Place Order
+              </button>
+            </div>
           </div>
         </section>
 
@@ -122,7 +131,7 @@
           id="basket-toggle-button"
           onclick="toggleBasket()"
         >
-          Warenkorb öffnen
+          🛒 Open basket
         </button>
       </div>
     </main>

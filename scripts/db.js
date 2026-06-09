@@ -3,60 +3,62 @@ const steaks = [
     name: "Ribeye Steak",
     price: 29.9,
     description:
-      "Saftiges Ribeye Steak 350g vom Angus-Rind, perfekt gegrillt und mit Kräuterbutter serviert.",
+      "Juicy 350g Angus ribeye steak, perfectly grilled and served with herb butter.",
     qty: 1,
   },
   {
-    name: "Filetsteak",
+    name: "Filet Steak",
     price: 34.5,
-    description: "Zartes Rinderfilet 250g mit Pfeffersauce und Ofenkartoffeln.",
+    description:
+      "Tender 250g beef tenderloin steak served with pepper sauce and baked potatoes.",
     qty: 1,
   },
   {
     name: "T-Bone Steak",
     price: 39.9,
     description:
-      "Großes 500g T-Bone Steak mit Knochen, serviert mit Grillgemüse.",
+      "Large 500g T-bone steak on the bone, served with grilled vegetables.",
     qty: 1,
   },
   {
     name: "Tomahawk Steak",
     price: 59.9,
     description:
-      "Beeindruckendes Tomahawk Steak 900g, langsam gereift und auf dem Grill zubereitet.",
+      "Impressive 900g tomahawk steak, dry-aged and grilled to perfection.",
     qty: 1,
   },
   {
-    name: "Rumpsteak",
+    name: "Sirloin Steak",
     price: 26.9,
     description:
-      "Klassisches Rumpsteak 300g mit kräftigem Fettrand, serviert mit Steakhouse-Pommes.",
+      "Classic 300g sirloin steak with a rich fat cap, served with steakhouse fries.",
     qty: 1,
   },
 ];
+
 const sides = [
   {
-    name: "Steakhouse Pommes",
+    name: "Steakhouse Fries",
     price: 4.9,
-    description: "Knusprige Pommes frites, klassisch gewürzt.",
+    description: "Crispy French fries, seasoned to perfection.",
     qty: 1,
   },
   {
-    name: "Ofenkartoffel",
+    name: "Baked Potato",
     price: 5.5,
-    description: "Ofenkartoffel mit Sour Cream.",
+    description: "Oven-baked potato served with sour cream.",
     qty: 1,
   },
   {
-    name: "Grillgemüse",
+    name: "Grilled Vegetables",
     price: 6.9,
-    description: "Frisch gegrilltes saisonales Gemüse.",
+    description: "Freshly grilled seasonal vegetables.",
     qty: 1,
   },
   {
     name: "Coleslaw",
     price: 3.9,
-    description: "Hausgemachter Krautsalat nach Steakhouse-Art.",
+    description: "Homemade coleslaw prepared steakhouse style.",
     qty: 1,
   },
 ];
@@ -65,25 +67,25 @@ const drinks = [
   {
     name: "Coca-Cola",
     price: 3.5,
-    description: "Erfrischendes Cola-Getränk 0,3l.",
+    description: "Refreshing cola beverage, 0.3L.",
     qty: 1,
   },
   {
-    name: "Mineralwasser",
+    name: "Mineral Water",
     price: 2.9,
-    description: "Still oder sprudelnd 0,3l.",
+    description: "Still or sparkling mineral water, 0.3L.",
     qty: 1,
   },
   {
-    name: "Rotwein Hausmarke",
+    name: "House Red Wine",
     price: 6.5,
-    description: "Kräftiger Rotwein, perfekt zu Steak 0,2l.",
+    description: "Full-bodied red wine, the perfect match for steak, 0.2L.",
     qty: 1,
   },
   {
-    name: "Bier",
+    name: "Draft Beer",
     price: 4.0,
-    description: "Frisch gezapftes Bier 0,5l.",
+    description: "Freshly poured draft beer, 0.5L.",
     qty: 1,
   },
 ];

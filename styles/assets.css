@@ -18,6 +18,21 @@
   height: 400px;
   object-fit: cover;
 }
+.order-btn {
+  display: block;
+  margin: 24px auto;
+  padding: 16px 16px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: var(--primary-color1);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.order-btn:hover {
+  background-color: #f4933d;
+}
 .just-steaks-logo {
   width: 120px;
   margin-top: 340px;
@@ -55,4 +70,13 @@
 #order-button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+.remove-from-basket,
+.increase-quantity {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  color: #b87333;
 }

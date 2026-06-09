@@ -1,35 +1,81 @@
 .basket-content {
   width: 300px;
-  background-color: var(--primary-color3);
   flex-grow: 1;
   z-index: 3;
   padding: 8px;
   display: flex;
   flex-direction: column;
   gap: 8px;
+  height: 500px;
+  position: sticky;
+  top: 8vh;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 18px 0 0 18px;
+  background-color: rgb(54, 53, 52);
 }
 
 .basket {
   width: 100%;
-  background-color: var(--primary-color3);
-  position: sticky;
-  top: 10vh;
+  background-color: rgb(54, 53, 52);
+  height: 800px;
   text-align: center;
+  padding-top: 16px;
 }
 .basket-item {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding-left: 4px;
-  padding-bottom: 6px;
+  align-items: flex-end;
+  padding: 8px;
   border-bottom: 1px solid #eee;
+  border-radius: 16px;
+  background-color: rgb(253, 234, 220);
+}
+
+.basket-items {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-bottom: 8px;
+  padding-top: 16px;
+  max-height: 250px;
+  overflow-y: auto;
+}
+.basket-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.basket-empty {
+  color: rgb(253, 234, 220);
+  font-weight: bold;
+  line-height: 1.5;
+}
+.basket-summary {
+  padding: 8px;
+  text-align: left;
+  background-color: rgb(54, 53, 52);
+  color: #eee;
 }
 .basket-total {
   font-weight: bold;
   color: #b87333;
   text-align: right;
   padding: 8px;
+}
+.total-price-conatiner {
+  border-top: 1px solid #eee;
+  padding-top: 8px;
+}
+.order-button-container {
+  text-align: center;
+  padding: 8px;
+  background-color: rgb(54, 53, 52);
+}
+.quantity-controls {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
 }
 .open-basket-button {
   display: none;
@@ -52,7 +98,7 @@
     align-items: stretch;
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.2);
+    background-color: rgb(54, 53, 52);
     z-index: 1000;
   }
 
@@ -61,7 +107,7 @@
     width: 90vw;
     max-width: 360px;
     position: absolute;
-    background: rgba(255, 255, 255, 0.95);
+    background-color: rgb(54, 53, 52);
     backdrop-filter: blur(8px);
     overflow-y: auto;
     padding: 16px;

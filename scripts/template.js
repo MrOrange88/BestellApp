@@ -8,12 +8,14 @@ function renderMenu(items, containerId) {
           <div class="menu-item-header">
             <h3>${item.name}</h3>
             <p>${item.description}</p>
-            <span>${item.price.toFixed(2)} €</span>
+            
           </div>
-
-          <button onclick="addToCart('${containerId}', ${index})">
-            +
+          <div class="menu-add-price">
+         <span>${item.price.toFixed(2)} €</span>
+           <button onclick="addToCart('${containerId}', ${index})">
+            Add 
           </button>
+          </div>
         </div>
       `,
     )
@@ -24,19 +26,22 @@ function getBasketTemplate() {
   let html = "";
 
   if (cart.length === 0) {
-    return "<p>Dein Warenkorb ist leer.</p>";
+    return '<p class="basket-empty">Nothing here yet.<br>Go Ahead and choose something delicious!</p>';
   }
 
   for (let i = 0; i < cart.length; i++) {
     html += `
       <div class="basket-item">
+      <div class="basket-item-info">
         <span>${cart[i].name}</span>
-
-        <div>
-        <div>
-          <button onclick="removeFromBasket(${i})">-</button>
+        <div class="quantity-controls">
+        <button onclick="removeFromBasket(${i})">🗑️</button>
           <span>${cart[i].quantity}</span>
-          <button onclick="increaseQuantity(${i})">+</button>
+          <button class="increase-quantity" onclick="increaseQuantity(${i})">+</button>
+        </div>
+      </div>
+        <div>
+          
         </div>
           <span>
             ${(cart[i].price * cart[i].quantity).toFixed(2)} €
