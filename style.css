@@ -123,14 +123,9 @@
 
   nav {
     width: auto;
-    display: flex;
     gap: 8px;
     overflow-x: auto;
     padding: 12px;
-  }
-
-  nav button {
-    min-width: 110px;
   }
 
   .app-logo {
@@ -236,10 +231,5 @@
   .add-to-cart {
     width: 100%;
     margin-top: 8px;
-  }
-
-  nav button {
-    min-width: 90px;
-    font-size: 16px;
   }
 }
