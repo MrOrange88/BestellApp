@@ -4,8 +4,10 @@ function renderMenu(items, containerId) {
   container.innerHTML += items
     .map(
       (item, index) => `
+      <div class="menu-item-container">
         <div class="menu-item">
           <div class="menu-item-header">
+          <div></div>
             <h3>${item.name}</h3>
             <p>${item.description}</p>
             
@@ -17,6 +19,7 @@ function renderMenu(items, containerId) {
           </button>
           </div>
         </div>
+      </div>
       `,
     )
     .join("");

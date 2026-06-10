@@ -39,6 +39,9 @@
   animation: rotationY 6s linear infinite;
   transform-style: preserve-3d;
 }
+.section-images {
+  padding-top: 64px;
+}
 @keyframes rotationY {
   from {
     transform: rotateY(0deg);
