@@ -42,6 +42,7 @@
 .section-images {
   padding-top: 64px;
 }
+
 @keyframes rotationY {
   from {
     transform: rotateY(0deg);

@@ -3,7 +3,9 @@
   --primary-color2: rgb(245, 245, 245);
   --primary-color3: rgb(255, 249, 240);
 }
-
+* {
+  box-sizing: border-box;
+}
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;

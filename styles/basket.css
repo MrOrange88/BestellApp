@@ -77,6 +77,13 @@
   justify-content: space-between;
   align-items: center;
 }
+.order-message {
+  color: rgb(253, 234, 220);
+  text-align: center;
+  padding: 24px;
+  font-weight: bold;
+  line-height: 1.5;
+}
 .order-button-container {
   text-align: center;
   padding: 8px;
