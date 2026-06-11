@@ -36,6 +36,16 @@ function increaseQuantity(index) {
   renderBasket();
 }
 
+function decreaseQuantity(index) {
+  if (cart[index].quantity > 1) {
+    cart[index].quantity--;
+  } else {
+    cart.splice(index, 1);
+  }
+
+  renderBasket();
+}
+
 function removeFromBasket(index) {
   cart.splice(index, 1);
 
@@ -117,7 +127,10 @@ function updateBasketButton() {
   }
 }
 function toggleBasket() {
-  document.getElementById("basket-content").classList.toggle("basket-open");
+  const basket = document.getElementById("basket-content");
+
+  basket.classList.toggle("basket-open");
+  document.body.classList.toggle("no-scroll");
 
   updateBasketButton();
 }
