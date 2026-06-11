@@ -7,17 +7,14 @@
   margin-top: clamp(100px, 120vh, 1000px);
   z-index: 10;
   padding: 8px;
-
   background-color: rgb(54, 53, 52);
   border-radius: 18px 0 0 18px;
 }
 
 .basket {
   max-height: calc(100vh - 160px);
-
   display: flex;
   flex-direction: column;
-
   background-color: rgb(54, 53, 52);
   text-align: center;
   padding-top: 16px;
@@ -33,13 +30,11 @@
 }
 
 .basket-items {
-  max-height: 240px;
+  max-height: 260px;
   min-height: 0;
-
   display: flex;
   flex-direction: column;
   gap: 8px;
-
   padding-top: 16px;
   padding-bottom: 8px;
 
