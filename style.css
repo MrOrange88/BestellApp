@@ -48,7 +48,8 @@
 }
 .menu-item-container {
   padding-top: 48px;
-  width: 100%;
+  width: calc(100% - 96px);
+  margin: 24px 48px;
 }
 .menu-item-header {
   min-width: 0;
@@ -61,8 +62,8 @@
   padding: clamp(16px, 3vw, 36px);
   border-bottom: 1px solid #eee;
   background-color: rgb(253, 234, 220);
-  width: 90%;
-  max-width: 1400px;
+  width: 100%;
+  margin: 0;
   border-radius: 24px;
   box-sizing: border-box;
 }
@@ -75,6 +76,7 @@
 .header-section-dishes {
   display: flex;
   width: 100%;
+
   background-color: var(--primary-color1);
   padding: 8px 16px;
   margin-bottom: 16px;

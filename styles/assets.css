@@ -47,6 +47,9 @@ nav a:hover {
   transform-style: preserve-3d;
 }
 .section-images {
+  width: calc(100% - 96px);
+  margin: 0 48px;
+  object-fit: cover;
   padding-top: 64px;
 }
 
