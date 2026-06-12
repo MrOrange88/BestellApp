@@ -1,64 +1,63 @@
-function renderMenu(items, containerId) {
-  const container = document.getElementById(containerId);
+function getMenuItemTemplate(item, containerId, index) {
+  return `
+    <div class="menu-item-container">
+      <div class="menu-item">
+        <div class="menu-item-header">
+          <h3>${item.name}</h3>
+          <p>${item.description}</p>
+        </div>
 
-  container.innerHTML += items
-    .map(
-      (item, index) => `
-      <div class="menu-item-container">
-        <div class="menu-item">
-          <div class="menu-item-header">
-            <h3>${item.name}</h3>
-            <p>${item.description}</p>
-          </div>
-
-          <div class="menu-add-price">
-            <span>${item.price.toFixed(2)} €</span>
-            <button onclick="addToCart('${containerId}', ${index})">
-              Add
-            </button>
-          </div>
+        <div class="menu-add-price">
+          <span>${item.price.toFixed(2)} €</span>
+          <button class="add-to-cart" onclick="addToCart('${containerId}', ${index})">
+            Add
+          </button>
         </div>
       </div>
-    `,
-    )
-    .join("");
+    </div>
+  `;
 }
 
-function getBasketTemplate() {
-  let html = "";
+function getBasketItemTemplate(item, index) {
+  return `
+    <div class="basket-item">
+      <div class="basket-item-info">
+        <span>${item.name}</span>
 
-  if (cart.length === 0) {
-    return `
-      <p class="basket-empty">
-        Nothing here yet.
-        <br>
-        Go ahead and choose something delicious!
-      </p>
-    `;
-  }
-
-  for (let i = 0; i < cart.length; i++) {
-    html += `
-      <div class="basket-item">
-        <div class="basket-item-info">
-          <span>${cart[i].name}</span>
-
-          <div class="quantity-controls">
-            <button onclick="decreaseQuantity(${i})">-</button>
-            <span>${cart[i].quantity}</span>
-            <button onclick="increaseQuantity(${i})">
-              +
-            </button>
-          </div>
-        </div>
-
-        <div class="basket-item-price">
-          <button onclick="removeFromBasket(${i})">X</button>
-          <span>${(cart[i].price * cart[i].quantity).toFixed(2)} €</span>
+        <div class="quantity-controls">
+          <button onclick="decreaseQuantity(${index})">-</button>
+          <span>${item.quantity}</span>
+          <button onclick="increaseQuantity(${index})">+</button>
         </div>
       </div>
-    `;
-  }
 
-  return html;
+      <div class="basket-item-price">
+        <button onclick="removeFromBasket(${index})">X</button>
+        <span>${(item.price * item.quantity).toFixed(2)} €</span>
+      </div>
+    </div>
+  `;
+}
+
+function getEmptyBasketTemplate() {
+  return `
+    <p class="basket-empty">
+      Nothing here yet.
+      <br>
+      Go ahead and choose something delicious!
+    </p>
+    <img src="assets/img/basket.png" alt="Empty Basket" class="empty-basket-image">
+  `;
+}
+
+function getOrderMessageTemplate() {
+  return `
+    <div class="order-message">
+      <p>
+        Your order is being prepared and will be delivered as soon as possible.
+        <br><br>
+        Thank you for your order!
+      </p>
+    </div>
+  `;
 }

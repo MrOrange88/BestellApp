@@ -84,7 +84,9 @@
               srcset=""
             />
             <div class="template-container" id="sides">
-              <div class="header-section-dishes"><h3>Beilagen</h3></div>
+              <div class="header-section-dishes">
+                <div class="content-width"><h3>Beilagen</h3></div>
+              </div>
             </div>
             <img
               class="section-images"
@@ -97,6 +99,17 @@
             </div>
           </div>
         </section>
+        <div id="order-modal" class="order-modal">
+          <div class="order-modal-content">
+            <button class="close-modal" onclick="closeOrderModal()">×</button>
+
+            <img
+              src="./assets/img/Frame 311.png"
+              alt="Bestellung erfolgreich"
+              class="order-modal-image"
+            />
+          </div>
+        </div>
         <section class="basket-content" id="basket-content">
           <div class="basket">
             <button class="close-basket-button" onclick="toggleBasket()">
@@ -107,7 +120,7 @@
 
             <div class="basket-items" id="basket-items"></div>
 
-            <div class="basket-summary">
+            <div class="basket-summary" id="basket-summary">
               <p>subtotal: <span id="subtotal-price">0.00 €</span></p>
               <p>delivery costs: <span id="delivery-price">5.00 €</span></p>
               <div class="total-price-container">

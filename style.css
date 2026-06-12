@@ -25,7 +25,7 @@
   text-align: center;
 }
 .menu-item-container {
-  padding-top: 16px;
+  padding-top: 48px;
   width: 100%;
 }
 .menu-item-header {
@@ -35,10 +35,8 @@
 .menu-item {
   display: flex;
   justify-content: space-between;
-  align-items: first baseline;
+  align-items: center;
   padding: clamp(16px, 3vw, 36px);
-  margin-top: 48px;
-  margin-bottom: -36px;
   border-bottom: 1px solid #eee;
   background-color: rgb(253, 234, 220);
   width: 90%;
@@ -47,6 +45,8 @@
   box-sizing: border-box;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 .template-container {
   display: flex;
@@ -62,6 +62,12 @@
   margin-bottom: 16px;
   position: absolute;
   left: 0;
+  box-sizing: border-box;
+}
+.content-width {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 16px;
   box-sizing: border-box;
 }
 .menu-item h3 {

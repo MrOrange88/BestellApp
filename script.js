@@ -8,27 +8,59 @@ function init() {
   renderBasket();
 }
 
-function addToCart(category, index) {
-  const menus = { steaks, sides, drinks };
-  const item = menus[category][index];
+function renderMenu(items, containerId) {
+  const container = document.getElementById(containerId);
 
-  let found = false;
+  container.innerHTML += items
+    .map((item, index) => getMenuItemTemplate(item, containerId, index))
+    .join("");
+}
+
+function getBasketTemplate() {
+  if (cart.length === 0) {
+    return getEmptyBasketTemplate();
+  }
+
+  return getBasketItemsTemplate();
+}
+
+function getBasketItemsTemplate() {
+  let html = "";
 
   for (let i = 0; i < cart.length; i++) {
-    if (cart[i].name === item.name) {
-      cart[i].quantity++;
-      found = true;
-    }
+    html += getBasketItemTemplate(cart[i], i);
   }
-  if (!found) {
-    cart.push({
-      name: item.name,
-      price: item.price,
-      quantity: 1,
-    });
+
+  return html;
+}
+
+function getMenus() {
+  return { steaks, sides, drinks };
+}
+
+function addToCart(category, index) {
+  const item = getMenus()[category][index];
+  const cartItem = findCartItem(item.name);
+
+  if (cartItem) {
+    cartItem.quantity++;
+  } else {
+    addNewCartItem(item);
   }
 
   renderBasket();
+}
+
+function findCartItem(name) {
+  return cart.find((item) => item.name === name);
+}
+
+function addNewCartItem(item) {
+  cart.push({
+    name: item.name,
+    price: item.price,
+    quantity: 1,
+  });
 }
 
 function increaseQuantity(index) {
@@ -40,97 +72,150 @@ function decreaseQuantity(index) {
   if (cart[index].quantity > 1) {
     cart[index].quantity--;
   } else {
-    cart.splice(index, 1);
+    removeCartItem(index);
   }
 
   renderBasket();
 }
 
-function removeFromBasket(index) {
+function removeCartItem(index) {
   cart.splice(index, 1);
+}
 
+function removeFromBasket(index) {
+  removeCartItem(index);
   renderBasket();
 }
 
 function orderBasket() {
   cart = [];
   renderBasket();
+  resetTotalPrice();
+  closeBasketAfterOrder();
+  openOrderModal();
+}
 
-  document.getElementById("basket-items").innerHTML = `
-    <div class="order-message">
-      <p>
-        Your order is being prepared and will be delivered as soon as possible.
-        <br><br>
-        Thank you for your order!
-      </p>
-    </div>
-  `;
+function showOrderMessage() {
+  document.getElementById("basket-items").innerHTML = getOrderMessageTemplate();
+}
 
+function resetTotalPrice() {
   document.getElementById("total-price").innerHTML = "0.00 €";
 }
 
 function renderBasket() {
-  const basketItems = document.getElementById("basket-items");
-  const subtotalPrice = document.getElementById("subtotal-price");
-  const totalPrice = document.getElementById("total-price");
-  const orderButton = document.getElementById("order-button");
+  updateBasketItems();
+  updateBasketPrices();
+  updateOrderButton();
+  updateBasketButton();
 
-  basketItems.innerHTML = getBasketTemplate();
+  const summary = document.getElementById("basket-summary");
 
+  if (cart.length === 0) {
+    summary.style.display = "none";
+  } else {
+    summary.style.display = "block";
+  }
+}
+
+function updateBasketItems() {
+  document.getElementById("basket-items").innerHTML = getBasketTemplate();
+}
+
+function updateBasketPrices() {
+  const subtotal = getSubtotal();
+  const total = getTotal(subtotal);
+
+  updatePrice("subtotal-price", subtotal);
+  updatePrice("total-price", total);
+}
+
+function getSubtotal() {
   let subtotal = 0;
 
   for (let i = 0; i < cart.length; i++) {
     subtotal += cart[i].price * cart[i].quantity;
   }
 
-  let total = subtotal;
+  return subtotal;
+}
 
+function getTotal(subtotal) {
   if (cart.length > 0) {
-    total += deliveryCosts;
+    return subtotal + deliveryCosts;
   }
 
-  subtotalPrice.innerHTML = subtotal.toFixed(2) + " €";
-  totalPrice.innerHTML = total.toFixed(2) + " €";
+  return subtotal;
+}
 
-  orderButton.disabled = cart.length === 0;
+function updatePrice(elementId, price) {
+  document.getElementById(elementId).innerHTML = price.toFixed(2) + " €";
+}
+
+function updateOrderButton() {
+  document.getElementById("order-button").disabled = cart.length === 0;
+}
+
+function openOrderModal() {
+  const modal = document.getElementById("order-modal");
+
+  modal.classList.add("show");
+
+  setTimeout(() => {
+    closeOrderModal();
+  }, 3000);
+}
+
+function closeBasketAfterOrder() {
+  const basket = document.getElementById("basket-content");
+
+  basket.classList.remove("basket-open");
+
+  document.body.classList.remove("no-scroll");
+  document.documentElement.classList.remove("no-scroll");
 
   updateBasketButton();
 }
 
+function closeOrderModal() {
+  document.getElementById("order-modal").classList.remove("show");
+}
+
 function toggleBasket() {
   const basket = document.getElementById("basket-content");
-  const button = document.getElementById("basket-toggle-button");
 
   basket.classList.toggle("basket-open");
 
-  if (basket.classList.contains("basket-open")) {
-    button.innerHTML = "Close Basket";
-  } else {
-    button.innerHTML = "Open Basket";
-  }
+  document.body.classList.toggle("no-scroll");
+  document.documentElement.classList.toggle("no-scroll");
+
+  updateBasketButton();
 }
+
 function updateBasketButton() {
+  const amount = getCartAmount();
+  const button = document.getElementById("basket-toggle-button");
+  const text = getBasketButtonText(amount);
+
+  button.innerHTML = text;
+}
+
+function getCartAmount() {
   let amount = 0;
 
   for (let i = 0; i < cart.length; i++) {
     amount += cart[i].quantity;
   }
 
-  const button = document.getElementById("basket-toggle-button");
-
-  if (
-    document.getElementById("basket-content").classList.contains("basket-open")
-  ) {
-    button.innerHTML = `🛒 Close basket (${amount})`;
-  } else {
-    button.innerHTML = `🛒 Open basket (${amount})`;
-  }
+  return amount;
 }
-function toggleBasket() {
+
+function getBasketButtonText(amount) {
   const basket = document.getElementById("basket-content");
 
-  basket.classList.toggle("basket-open");
-  document.body.classList.toggle("no-scroll");
+  if (basket.classList.contains("basket-open")) {
+    return `🛒 Close basket (${amount})`;
+  }
 
-  updateBasketButton();
+  return `🛒 Open basket (${amount})`;
 }

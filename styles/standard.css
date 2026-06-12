@@ -24,8 +24,10 @@ body {
   font-family: "Quicksand", sans-serif;
   color: rgb(7, 7, 7);
 }
-.no-scroll {
+html.no-scroll,
+body.no-scroll {
   overflow: hidden;
+  height: 100vh;
 }
 
 header {
@@ -40,7 +42,7 @@ header {
 
 .header-container {
   max-width: 1920px;
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -79,7 +81,7 @@ footer {
 
 .footer-container {
   max-width: 1920px;
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
