@@ -1,21 +1,43 @@
 .main-container {
   display: flex;
   flex-direction: row;
-  flex-grow: 1;
-  max-width: 1920px;
+  width: 100%;
+}
+
+.page-container {
+  width: 100%;
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+.content-layout {
+  display: flex;
+  width: 100%;
 }
 .order-content {
-  width: calc(100% - 300px);
+  flex: 1;
+  min-width: 0;
   background-color: var(--primary-color2);
   display: flex;
   flex-direction: column;
   padding-bottom: 64px;
 }
+
 .restaurant-container {
+  width: 100%;
   position: relative;
-  display: flex;
-  flex-direction: column;
+  max-width: none;
+  padding: 0;
+  margin: 0;
 }
+
+.just-steaks-background {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
 .just-steaks-info {
   text-align: center;
   padding-bottom: 16px;
@@ -64,6 +86,11 @@
   left: 0;
   box-sizing: border-box;
 }
+.header-section-dishes .content-width {
+  width: 90%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
 .content-width {
   max-width: 1440px;
   margin: 0 auto;
@@ -104,6 +131,20 @@
 .add-to-cart:hover {
   background-color: #f4933d;
 }
+
+.hero-content {
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+  padding: 0 32px;
+  text-align: center;
+}
+
+.hero-content nav {
+  display: flex;
+  justify-content: center;
+}
+
 @media (max-width: 1150px) {
   .menu-item {
     padding: 20px;
@@ -143,8 +184,13 @@
     margin-right: 16px;
   }
 
+  .restaurant-container {
+    padding: 12px;
+  }
+
   .just-steaks-background {
     height: 280px;
+    border-radius: 24px;
   }
 
   .just-steaks-logo {
@@ -173,8 +219,13 @@
     margin-right: 8px;
   }
 
+  .restaurant-container {
+    padding: 8px;
+  }
+
   .just-steaks-background {
     height: 200px;
+    border-radius: 16px;
   }
 
   .just-steaks-logo {

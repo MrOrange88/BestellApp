@@ -4,60 +4,68 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BestellApp</title>
+
+    <link rel="stylesheet" href="styles/standard.css" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="styles/assets.css" />
     <link rel="stylesheet" href="styles/basket.css" />
     <link rel="stylesheet" href="styles/fonts.css" />
-    <link rel="stylesheet" href="styles/standard.css" />
+
     <link
       rel="shortcut icon"
       href="./assets/img/JustSteakFavicon.png"
       type="image/x-icon"
     />
   </head>
+
   <body onload="init()">
     <header>
-      <div class="header-container">
-        <img class="app-logo" src="./assets/img/Logo 01.png" alt="" srcset="" />
+      <div class="header-container content-container">
+        <img
+          class="app-logo"
+          src="./assets/img/Logo 01.png"
+          alt="BestellApp Logo"
+        />
         <button class="menu-button">
-          <img class="menu-img" src="./assets/img/menu.png" alt="" />
+          <img class="menu-img" src="./assets/img/menu.png" alt="Menu" />
         </button>
       </div>
     </header>
+
     <main>
-      <div class="main-container">
-        <section class="order-content">
-          <div class="restaurant-container">
+      <div class="page-container content-container">
+        <div class="restaurant-container">
+          <img
+            class="just-steaks-background"
+            src="./assets/img/justSteaksBackground3.png"
+            alt="Just Steaks Bild"
+          />
+          <div class="just-steaks-logo-container">
             <img
-              class="just-steaks-background"
-              src="./assets/img/justSteaksBackground3.png"
-              alt="Just Steaks Bild"
-              srcset=""
+              class="just-steaks-logo"
+              src="./assets/img/justSteaksLogo.png"
+              alt="Just Steaks Logo"
             />
-            <div class="just-steaks-logo-container">
-              <img
-                class="just-steaks-logo"
-                src="./assets/img/justSteaksLogo.png"
-                alt="Just Steaks Logo"
-                srcset=""
-              />
-            </div>
           </div>
+        </div>
+
+        <div class="hero-content">
           <div class="just-steaks-info">
             <h1>Just Steaks</h1>
             <div class="rating-badge">
               <p>⭐⭐⭐⭐⭐ 4.8/5 (327 Reviews)</p>
             </div>
           </div>
+
           <div class="restaurant-description">
             <p>
               Just Steaks – Real Fire. Honest Flavor. At Just Steaks, everything
               revolves around one thing: perfectly grilled meat. Juicy steaks,
               open flames, and uncompromising quality. <br />
               We grill over high heat, give the meat the time it deserves, and
-              bring out the very best in every <br />
+              bring out the very best in every dish. <br />
               Whether it's a ribeye, sirloin steak, or tender skewers, we
-              combine authentic craftsmanship with pure flavor.<br />
+              combine authentic craftsmanship with pure flavor. <br />
               No gimmicks. No shortcuts. Just Steaks.
             </p>
           </div>
@@ -67,42 +75,82 @@
             <a class="nav-button" href="#sides">Beilagen</a>
             <a class="nav-button" href="#drinks">Getränke</a>
           </nav>
-          <div class="dishes-container">
-            <img
-              class="section-images"
-              src="./assets/img/steaks.png"
-              alt="steaks img"
-              srcset=""
-            />
-            <div class="template-container" id="steaks">
-              <div class="header-section-dishes"><h3>Steaks</h3></div>
-            </div>
-            <img
-              class="section-images"
-              src="./assets/img/beilagen.png"
-              alt="Beilagen Sektion Bild"
-              srcset=""
-            />
-            <div class="template-container" id="sides">
-              <div class="header-section-dishes">
-                <div class="content-width"><h3>Beilagen</h3></div>
+        </div>
+
+        <div class="main-container">
+          <section class="order-content">
+            <div class="dishes-container">
+              <img
+                class="section-images"
+                src="./assets/img/steaks.png"
+                alt="Steaks"
+              />
+
+              <div class="template-container" id="steaks">
+                <div class="header-section-dishes">
+                  <div class="content-width"><h3>Steaks</h3></div>
+                </div>
+              </div>
+
+              <img
+                class="section-images"
+                src="./assets/img/beilagen.png"
+                alt="Beilagen"
+              />
+
+              <div class="template-container" id="sides">
+                <div class="header-section-dishes">
+                  <div class="content-width"><h3>Beilagen</h3></div>
+                </div>
+              </div>
+
+              <img
+                class="section-images"
+                src="./assets/img/drinks.png"
+                alt="Getränke"
+              />
+
+              <div class="template-container" id="drinks">
+                <div class="header-section-dishes">
+                  <div class="content-width"><h3>Getränke</h3></div>
+                </div>
               </div>
             </div>
-            <img
-              class="section-images"
-              src="./assets/img/drinks.png"
-              alt="Getränke Sektion Bild"
-              srcset=""
-            />
-            <div class="template-container" id="drinks">
-              <div class="header-section-dishes"><h3>Getränke</h3></div>
+          </section>
+
+          <section class="basket-content" id="basket-content">
+            <div class="basket">
+              <button class="close-basket-button" onclick="toggleBasket()">
+                ×
+              </button>
+
+              <h2>Your Basket</h2>
+              <div class="basket-items" id="basket-items"></div>
+
+              <div class="basket-summary" id="basket-summary">
+                <p>subtotal: <span id="subtotal-price">0.00 €</span></p>
+                <p>delivery costs: <span id="delivery-price">5.00 €</span></p>
+                <div class="total-price-container">
+                  <p>total: <span id="total-price">0.00 €</span></p>
+                </div>
+              </div>
+
+              <div class="order-button-container">
+                <button
+                  class="order-btn"
+                  id="order-button"
+                  onclick="orderBasket()"
+                >
+                  Place Order
+                </button>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
+
         <div id="order-modal" class="order-modal">
           <div class="order-modal-content">
             <button class="close-modal" onclick="closeOrderModal()">×</button>
-
             <img
               src="./assets/img/Frame 311.png"
               alt="Bestellung erfolgreich"
@@ -110,34 +158,6 @@
             />
           </div>
         </div>
-        <section class="basket-content" id="basket-content">
-          <div class="basket">
-            <button class="close-basket-button" onclick="toggleBasket()">
-              ×
-            </button>
-
-            <h2>Your Basket</h2>
-
-            <div class="basket-items" id="basket-items"></div>
-
-            <div class="basket-summary" id="basket-summary">
-              <p>subtotal: <span id="subtotal-price">0.00 €</span></p>
-              <p>delivery costs: <span id="delivery-price">5.00 €</span></p>
-              <div class="total-price-container">
-                <p>total: <span id="total-price">0.00 €</span></p>
-              </div>
-            </div>
-            <div class="order-button-container">
-              <button
-                class="order-btn"
-                id="order-button"
-                onclick="orderBasket()"
-              >
-                Place Order
-              </button>
-            </div>
-          </div>
-        </section>
 
         <button
           class="open-basket-button"
@@ -148,13 +168,15 @@
         </button>
       </div>
     </main>
+
     <footer>
-      <div class="footer-container">
+      <div class="footer-container content-container">
         <p>&copy; 2026 BestellApp. Alle Rechte vorbehalten.</p>
       </div>
     </footer>
+
+    <script src="scripts/db.js"></script>
+    <script src="scripts/template.js"></script>
+    <script src="script.js"></script>
   </body>
-  <script src="scripts/db.js"></script>
-  <script src="scripts/template.js"></script>
-  <script src="script.js"></script>
 </html>
