@@ -21,6 +21,7 @@
   text-decoration: none;
   cursor: pointer;
   border: 2px solid var(--primary-color1);
+  margin-bottom: 34px;
 }
 nav a:hover {
   background-color: var(--primary-color1);
@@ -51,7 +52,7 @@ nav a:hover {
   height: 250px;
   object-fit: cover;
   display: block;
-  padding-top: 64px;
+  padding-top: 16px;
   margin: 0;
 }
 

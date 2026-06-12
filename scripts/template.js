@@ -61,3 +61,12 @@ function getOrderMessageTemplate() {
     </div>
   `;
 }
+function getSectionHeaderTemplate(title) {
+  return `
+    <div class="header-section-dishes">
+      <div class="content-width">
+        <h3>${title}</h3>
+      </div>
+    </div>
+  `;
+}

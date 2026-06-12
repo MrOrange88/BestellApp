@@ -20,7 +20,7 @@
   background-color: var(--primary-color2);
   display: flex;
   flex-direction: column;
-  padding-bottom: 64px;
+  padding-bottom: 16px;
 }
 
 .restaurant-container {
@@ -47,9 +47,9 @@
   text-align: center;
 }
 .menu-item-container {
-  width: calc(100% - 96px);
-  margin: 16px 48px;
-  padding-top: 0;
+  width: 100%;
+  margin: 16px 0;
+  padding: 0 48px;
 }
 .menu-item-header {
   min-width: 0;
@@ -64,32 +64,30 @@
   background-color: rgb(253, 234, 220);
   width: 100%;
   margin: 0;
-  margin-top: 34px;
   border-radius: 24px;
   box-sizing: border-box;
 }
 .template-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   width: 100%;
 }
 .header-section-dishes {
-  display: flex;
   width: 100%;
-
   background-color: var(--primary-color1);
-  padding: 8px 16px;
-  margin-bottom: 16px;
-  position: absolute;
-  left: 0;
-  box-sizing: border-box;
+  box-shadow: 0 0 0 100vmax var(--primary-color1);
+  clip-path: inset(0 -100vmax);
+  padding: 8px 0;
+  margin: 0;
+  position: static;
 }
-.header-section-dishes .content-width {
+.header-section-dishes .content-width,
+.section-header-inner {
   width: 100%;
   max-width: 1920px;
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 48px;
 }
 .content-width {
   max-width: 1440px;
@@ -365,6 +363,5 @@
 
   .menu-add-price {
     flex-direction: row;
-    gap: 170px;
   }
 }
