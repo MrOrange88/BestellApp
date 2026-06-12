@@ -108,7 +108,10 @@ function renderBasket() {
   updateBasketPrices();
   updateOrderButton();
   updateBasketButton();
+  updateBasketSummary();
+}
 
+function updateBasketSummary() {
   const summary = document.getElementById("basket-summary");
 
   if (cart.length === 0) {
@@ -119,7 +122,17 @@ function renderBasket() {
 }
 
 function updateBasketItems() {
-  document.getElementById("basket-items").innerHTML = getBasketTemplate();
+  const basketItems = document.getElementById("basket-items");
+
+  basketItems.innerHTML = getBasketTemplate();
+
+  if (cart.length === 0) {
+    basketItems.style.overflowY = "hidden";
+    basketItems.style.maxHeight = "none";
+  } else {
+    basketItems.style.overflowY = "auto";
+    basketItems.style.maxHeight = "260px";
+  }
 }
 
 function updateBasketPrices() {
