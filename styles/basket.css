@@ -13,7 +13,7 @@
 }
 
 .basket {
-  max-height: calc(100vh - 160px);
+  max-height: 800px;
   display: flex;
   flex-direction: column;
   background-color: rgb(54, 53, 52);
@@ -31,7 +31,6 @@
 }
 
 .basket-items {
-  max-height: 260px;
   min-height: 0;
   display: flex;
   flex-direction: column;
@@ -177,32 +176,46 @@
 
   .basket {
     width: 100%;
-    height: 100%;
+    height: 100dvh;
     max-height: none;
-    padding: 24px 32px;
+    padding: 16px 24px;
     box-sizing: border-box;
-    overflow-y: auto;
+    background-color: rgb(54, 53, 52);
+
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
   }
 
   .close-basket-button {
     display: block;
-    margin: 16px 0 8px auto;
+    margin: 0 0 8px auto;
     font-size: 24px;
     background: none;
+    flex-shrink: 0;
+  }
+
+  .basket h2 {
+    margin-bottom: 12px;
+    flex-shrink: 0;
   }
 
   .basket-items {
-    max-height: none;
+    flex: 1;
     min-height: 0;
-    overflow: visible;
+    max-height: none;
+    overflow-y: auto;
+    padding-bottom: 8px;
   }
 
   .basket-summary {
-    margin-top: 8px;
+    margin-top: auto;
+    flex-shrink: 0;
   }
 
   .order-button-container {
-    padding: 24px 0;
+    padding: 12px 0;
+    flex-shrink: 0;
   }
 
   .open-basket-button {

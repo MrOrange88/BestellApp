@@ -128,10 +128,8 @@ function updateBasketItems() {
 
   if (cart.length === 0) {
     basketItems.style.overflowY = "hidden";
-    basketItems.style.maxHeight = "none";
   } else {
     basketItems.style.overflowY = "auto";
-    basketItems.style.maxHeight = "260px";
   }
 }
 
